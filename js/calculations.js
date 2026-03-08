@@ -29,20 +29,18 @@ export function getWateringStatus(nextWatering) {
 }
 
 export function getStatusMessage(status, nextWatering) {
+  const formattedDate = nextWatering.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   if (status === "upcoming") {
-    return `Watering due ${nextWatering.toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    })}`;
+    return `Watering due ${formattedDate}`;
   } else if (status === "today") {
     return "Watering due today.";
   } else {
-    return `Water overdue: ${nextWatering.toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    })}`;
+    return `Water overdue: ${formattedDate}`;
   }
 }
 // Future getWateringStatus(new Date("2026-03-20"));
