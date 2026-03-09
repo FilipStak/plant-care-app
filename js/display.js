@@ -9,8 +9,8 @@ function init() {
   const plants = load();
   for (const plant of plants) {
     const nextWatering = calculateNextWatering(
-      plant.lastWatered,
-      plant.wateringFrequency,
+      new Date(plant.lastWatered),
+      species[plant.species].wateringFrequency,
     );
     const status = getWateringStatus(nextWatering);
     const message = getStatusMessage(status, nextWatering);
@@ -20,7 +20,7 @@ function init() {
         ? document.getElementById("today")
         : document.getElementById("upcoming");
     section.appendChild(card);
-    document.getElementById("allplants").appendChild(card.cloneNode(true));
+    document.getElementById("allplants").appendChild(card.cloneNode(true)); //clone the card and append it to the allplants section
   }
 }
 function buildCard(plant, nextWatering, status, message) {
@@ -37,14 +37,14 @@ function buildCard(plant, nextWatering, status, message) {
   description.textContent = speciesDescription;
   card.appendChild(description); //append the description element to the card
   const lastWateringElement = document.createElement("p");
-  lastWateringElement.textContent = `Last Watering: ${plant.lastWatered.toLocaleString(
-    "en-GB",
-    {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    },
-  )}`; //set the text content of the last watering element to the plant's last watering date
+  lastWateringElement.textContent = `Last Watering: ${new Date(
+    plant.lastWatered,
+  ).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })}`; //set the text content of the last watering element to the plant's last watering date
   card.appendChild(lastWateringElement); //append the last watering element to the card
   return card;
 }
+init();
