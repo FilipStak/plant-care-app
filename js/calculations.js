@@ -2,7 +2,7 @@
 export function calculateNextWatering(lastWatered, wateringFrequency) {
   const nextWatering = new Date(lastWatered);
   nextWatering.setHours(0, 0, 0, 0);
-  nextWatering.setDate(lastWatered.getDate() + wateringFrequency);
+  nextWatering.setDate(nextWatering.getDate() + wateringFrequency);
   return nextWatering;
 }
 /*Test nextWatering
