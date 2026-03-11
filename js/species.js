@@ -8,5 +8,3 @@ export const species = {
     description: "Cactus is a desert plant known for its spiky leaves.",
   },
 };
-//const plantSpecies = "calathea";
-// TEST: console.log(species[plantSpecies]);
