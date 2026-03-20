@@ -4,8 +4,14 @@ import {
   calculateNextWatering,
 } from "./calculations.js";
 import { species } from "./species.js";
-import { load } from "./storage.js";
+import { load, save } from "./storage.js";
+function clearSection() {
+  document.getElementById("today-plants").innerHTML = "";
+  document.getElementById("upcoming-plants").innerHTML = "";
+  document.getElementById("all-plants").innerHTML = "";
+}
 function init() {
+  clearSection();
   const plants = load();
   for (const plant of plants) {
     const nextWatering = calculateNextWatering(
@@ -17,10 +23,10 @@ function init() {
     const card = buildCard(plant, nextWatering, status, message);
     const section =
       status === "overdue" || status === "today"
-        ? document.getElementById("today")
-        : document.getElementById("upcoming");
+        ? document.getElementById("today-plants")
+        : document.getElementById("upcoming-plants");
     section.appendChild(card);
-    document.getElementById("allplants").appendChild(card.cloneNode(true)); //clone the card and append it to the allplants section
+    document.getElementById("all-plants").appendChild(card.cloneNode(true)); //clone the card and append it to the allplants section
   }
 }
 function buildCard(plant, nextWatering, status, message) {
@@ -45,6 +51,19 @@ function buildCard(plant, nextWatering, status, message) {
     year: "numeric",
   })}`; //set the text content of the last watering element to the plant's last watering date
   card.appendChild(lastWateringElement); //append the last watering element to the card
+  const waterButton = document.createElement("button");
+  waterButton.textContent = "Watered Today";
+  card.appendChild(waterButton);
+  waterButton.addEventListener("click", () => {
+    const allPlants = load() || [];
+    const index = allPlants.findIndex((p) => p.id === plant.id);
+    if (index !== -1) {
+      allPlants[index].lastWatered = new Date().toISOString().split("T")[0];
+      save(allPlants);
+      init();
+    }
+  });
   return card;
 }
+
 init();
