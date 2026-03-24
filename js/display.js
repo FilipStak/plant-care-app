@@ -31,7 +31,7 @@ function init() {
 }
 function buildCard(plant, nextWatering, status, message) {
   const card = document.createElement("div");
-  card.className = "card";
+  card.className = "card p-3 m-2";
   const name = document.createElement("h3");
   name.textContent = plant.name; //set the text content of the name element to the plant's name
   card.appendChild(name); //append the name element to the card
