@@ -1,7 +1,18 @@
 html {
     box-sizing: border-box;
 }
-
+.bg-today {
+    background-color: darkolivegreen;
+    color: white;
+}
+.bg-plant-secondary {
+    background-color: antiquewhite;
+    color: black;
+}
+.bg-plant-tertiary {
+    background-color: burlywood;
+    color: darkolivegreen;
+}
 *,
 *::before,
 *::after {
