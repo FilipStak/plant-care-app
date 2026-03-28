@@ -30,17 +30,38 @@ h3 {
 button {
     background-color: #56526e;
     color: #e0def4;
-    border: 2px solid #56526e;
+    border: none;
     padding: 0.5em 1em;
+    margin-left: 3em;
+    margin-right: 3em;
     border-radius: 0.5em;
+    transition: all 0.12s ease;
 }
 button:hover {
     background-color: #6e6a86;
-    border: 2px solid #6e6a86;
     color: #f6c177;
 }
 button:active {
     background-color: #2a283e;
+    color: #f6c177;
+}
+.button-add-plant {
+    background-color: #3e8fb0;
+    color: #e0def4;
+    border: none;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    margin-left: 3em;
+    margin-right: 3em;
+    border-radius: 0.5em;
+    transition: all 0.12s ease;
+}
+.button-add-plant:hover {
+    background-color: #9ccfd8;
+    color: #2a283e;
+}
+.button-add-plant:active {
+    background-color: #1f1d2e;
     color: #f6c177;
 }
 .bg-today {
