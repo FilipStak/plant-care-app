@@ -28,19 +28,20 @@ h3 {
     color: #eb6f92;
 }
 button {
-    background-color: #2a283e;
+    background-color: #56526e;
     color: #e0def4;
-    border: 2px solid #44415a;
+    border: 2px solid #56526e;
     padding: 0.5em 1em;
     border-radius: 0.5em;
 }
 button:hover {
-    background-color: #44415a;
+    background-color: #6e6a86;
+    border: 2px solid #6e6a86;
     color: #f6c177;
 }
 button:active {
-    background-color: #393552;
-    color: #e0def4;
+    background-color: #2a283e;
+    color: #f6c177;
 }
 .bg-today {
     background-color: #393552;
