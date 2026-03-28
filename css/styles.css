@@ -1,17 +1,50 @@
 html {
     box-sizing: border-box;
+    background-color: #232136;
+}
+body {
+    background-color: #2a273f;
+    color: #e0def4;
+}
+.card-title-today {
+    color: #9ccfd8;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.card-title-upcoming {
+    color: #ea9a97;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.card-title-allplants {
+    color: #c4a7e7;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+}
+h3 {
+    color: #eb6f92;
 }
 .bg-today {
-    background-color: darkolivegreen;
-    color: white;
+    background-color: #393552;
+    color: #3e8fb0;
 }
 .bg-plant-secondary {
-    background-color: antiquewhite;
-    color: black;
+    background-color: #393552;
+    color: #ea9a97;
 }
 .bg-plant-tertiary {
-    background-color: burlywood;
-    color: darkolivegreen;
+    background-color: #393552;
+    color: #c4a7e7;
+}
+.form-label {
+    color: #eb6f92;
+}
+.card {
+    background-color: #393552;
+    color: #e0def4;
 }
 *,
 *::before,
