@@ -27,6 +27,21 @@ body {
 h3 {
     color: #eb6f92;
 }
+button {
+    background-color: #2a283e;
+    color: #e0def4;
+    border: 2px solid #44415a;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+}
+button:hover {
+    background-color: #44415a;
+    color: #f6c177;
+}
+button:active {
+    background-color: #393552;
+    color: #e0def4;
+}
 .bg-today {
     background-color: #393552;
     color: #3e8fb0;
