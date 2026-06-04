@@ -63,6 +63,20 @@ function buildCard(plant, nextWatering, status, message) {
       init();
     }
   });
+
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove Plant";
+  card.appendChild(removeButton);
+  removeButton.addEventListener("click", () => {
+    const allPlants = load() || [];
+
+    const updatedPlants = allPlants.filter((p) => p.id !== plant.id);
+
+    save(updatedPlants);
+
+    init();
+  });
+
   return card;
 }
 
